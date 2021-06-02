@@ -1,0 +1,14 @@
+f = imread('A.bmp');
+%f = rgb2gray(f);
+f = double(f);
+F = fftshift(fft2(f));
+[m,n] = size(f);
+sig = 50;
+% H = Gaussian(m, n, sig);
+H = ButterWorth([m,n],0.05,2);
+G = H.*F;
+figure,imshow(H);
+figure,mesh(H);
+g = ifft2(ifftshift(G));
+g = uint8(g);
+figure,imshow(g);

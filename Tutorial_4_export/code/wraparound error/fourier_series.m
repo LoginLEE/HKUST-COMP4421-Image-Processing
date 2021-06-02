@@ -1,0 +1,12 @@
+t = 0:0.000001:0.02;
+f = 150;
+y1 = sin(2*pi*f*t);
+y2 = 0.6*sin(2*pi*2*f*t);
+y3 = 0.8*sin(2*pi*4*f*t);
+y4 = 0.4*sin(2*pi*5*f*t);
+y = y1+y2+y3+y4;
+subplot(511),plot(t,y),title('y = y1 + y2 + y3 + y4')
+subplot(512),plot(t,y1),title('y1 = sin(2*pi*f*t)')
+subplot(513),plot(t,y2),title('y2 = 0.6*sin(2*pi*2*f*t)')
+subplot(514),plot(t,y3),title('y3 = 0.8*sin(2*pi*4*f*t)')
+subplot(515),plot(t,y4),title('y4 = 0.4*sin(2*pi*5*f*t)')
